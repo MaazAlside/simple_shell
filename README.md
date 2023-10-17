@@ -1,5 +1,5 @@
 # simple_shell
-simple_shell
+simple_shell project
 # Simple Shell Project
 
 ## Background Context
