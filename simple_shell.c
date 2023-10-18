@@ -26,7 +26,8 @@ int main(int ac, char **argv)
 		buffer = my_getline();
 		if (buffer == NULL)
 		{
-			write(1, "\n", 1);
+			if (isatty(STDIN_FILENO))
+				write(1, "\n", 1);
 			return (status);
 		}
 		token = strtok(buffer, " \t\n");

@@ -14,7 +14,8 @@ char *my_getline(void)
 
 	buffer_size = 0;
 	buffer = NULL;
-	write(1, "#cisfun$ ", 9);
+	if (isatty(STDIN_FILENO))
+		write(1, "#cisfun$ ", 9);
 	n_char = getline(&buffer, &buffer_size, stdin);
 	if (n_char == -1)
 	{
