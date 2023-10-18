@@ -11,7 +11,7 @@ int main(void)
 	pid_t pid;
 	int status, i;
 	char **array = NULL;
-	char *token; 
+	char *token;
 	char *buffer;
 
 	i = 0;
@@ -21,11 +21,11 @@ int main(void)
 		buffer = my_getline();
 		token = strtok(buffer, " \t\n");
 		while (token)
-			{
-				array[i] = token;
-				token = strtok(NULL, " \t\n");
-				i++;
-			}
+		{
+			array[i] = token;
+			token = strtok(NULL, " \t\n");
+			i++;
+		}
 		array[i] = NULL;
 		pid = fork();
 		if (pid == 0)
