@@ -16,9 +16,10 @@ char *my_getline(void)
 	buffer = NULL;
 	write(1, "#cisfun$ ", 9);
 	n_char = getline(&buffer, &buffer_size, stdin);
-	if (n_char == EOF)
+	if (n_char == -1)
 	{
-		perror("getline error");
+		free(buffer);
+		return(NULL);
 	}
 	return (buffer);
 }
