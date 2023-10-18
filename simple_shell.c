@@ -12,9 +12,7 @@ int main(int ac, char **argv)
 {
 	pid_t pid;
 	int status, i;
-	char **array;
-	char *token;
-	char *buffer;
+	char **array, *token, *buffer;
 	(void) ac;
 	(void) argv;
 
@@ -42,9 +40,7 @@ int main(int ac, char **argv)
 		if (pid == 0)
 		{
 			if (execve(array[0], array, environ) == -1)
-			{
 				perror("execve error");
-			}
 		}
 		else
 		{
