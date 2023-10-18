@@ -19,7 +19,7 @@ char *my_getline(void)
 	if (n_char == -1)
 	{
 		free(buffer);
-		return(NULL);
+		return (NULL);
 	}
 	return (buffer);
 }

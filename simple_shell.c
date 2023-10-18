@@ -2,6 +2,8 @@
 
 /**
  * main - simple_shell.
+ * @ac: arguments count.
+ * @argv: arguments vector.
  *
  * Return: Nothing.
  */
