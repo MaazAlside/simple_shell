@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+extern char **environ;
+
 char *my_getline(void);
 
 

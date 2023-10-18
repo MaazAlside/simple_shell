@@ -30,7 +30,7 @@ int main(void)
 		pid = fork();
 		if (pid == 0)
 		{
-			if (execve(array[0], array, NULL) == -1)
+			if (execve(array[0], array, environ) == -1)
 			{
 				perror("execve error");
 			}
