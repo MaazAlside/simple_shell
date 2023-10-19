@@ -1,18 +1,44 @@
 #include "main.h"
 
 /**
- * main - simple_shell.
- * @ac: arguments count.
- * @argv: arguments vector.
- *
- * Return: Nothing.
- */
+* execute - Execute a command.
+* @command: The command to execute.
+* @status: Pointer to the status variable to be updated.
+*/
+void execute(char **command, int *status)
+{
+
+	pid_t pid = fork();
+
+	if (pid == 0)
+	{
+		if (execve(command[0], command, environ) == -1)
+		{
+			perror("execve error");
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		wait(status);
+	}
+}
+
+
+/**
+* main - simple_shell.
+* @ac: arguments count.
+* @argv: arguments vector.
+*
+* Return: Nothing.
+*/
 
 int main(int ac, char **argv)
 {
-	pid_t pid;
 	int status, i;
+
 	char **array, *token, *buffer;
+
 	(void) ac;
 	(void) argv;
 
@@ -41,17 +67,7 @@ int main(int ac, char **argv)
 			free2d(array);
 			exit(EXIT_SUCCESS);
 		}
-		pid = fork();
-		if (pid == 0)
-		{
-			if (execve(array[0], array, environ) == -1)
-				perror("execve error");
-
-		}
-		else
-		{
-			wait(&status);
-		}
+		execute(array, &status);
 		i = 0;
 		free(buffer);
 		free(array);
