@@ -83,4 +83,3 @@ The shell should work in both interactive and non-interactive modes, providing o
 
 17. **File as input (Advanced)**: Allow the shell to take a file as a command-line argument, containing commands to be executed.
 
-Feel free to check each task's respective repository on GitHub for more details and progress.
