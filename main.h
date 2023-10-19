@@ -14,5 +14,6 @@ char *my_getline(void);
 char **my_strtok(char *line);
 char *_strdup(char *str);
 int _strcmp(char *s1, char *s2);
+void free2d(char **array);
 
 #endif

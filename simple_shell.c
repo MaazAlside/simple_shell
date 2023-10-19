@@ -38,7 +38,7 @@ int main(int ac, char **argv)
 		array[i] = NULL;
 		if (_strcmp(array[0], "exit") == 0)
 		{
-			free2Darray(array);
+			free2d(array);
 			exit(EXIT_SUCCESS);
 		}
 		pid = fork();
