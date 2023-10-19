@@ -11,7 +11,7 @@
 extern char **environ;
 
 char *my_getline(void);
-char **my_strtok(char *line);
+/* char **my_strtok(char *line); */
 
 
 
