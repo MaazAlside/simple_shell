@@ -10,24 +10,24 @@
 
 int main(int ac, char **argv)
 {
-	int status = 0, i;
-	char **cmd = NULL, *line = NULL;
-	(void) ac;
+        int status = 0, i;
+        char **cmd = NULL, *line = NULL;
+        (void) ac;
 
-	for (;;)
-	{
-		line = my_getline();
-		if (line == NULL)
-		{
-			if (isatty(STDIN_FILENO))
-				write(1, "\n", 1);
-			return (status);
-		}
-		cmd = my_strtok(line);
-		if (cmd == NULL)
-			continue;
-		free2d(cmd);
-		status = my_exec;
-		i++;
-	}
+        for (;;)
+        {
+                line = my_getline();
+                if (line == NULL)
+                {
+                        if (isatty(STDIN_FILENO))
+                                write(1, "\n", 1);
+                        return (status);
+                }
+                cmd = my_strtok(line);
+                if (cmd == NULL)
+                        continue;
+                free2d(cmd);
+                status = my_exec;
+                i++;
+        }
 }
