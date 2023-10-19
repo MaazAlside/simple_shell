@@ -48,6 +48,6 @@ int main(int ac, char **argv)
 		}
 		i = 0;
 		free(buffer);
-		free(array);
 	}
+		free(array);
 }
