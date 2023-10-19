@@ -36,11 +36,14 @@ int main(int ac, char **argv)
 			i++;
 		}
 		array[i] = NULL;
+		if (_strcmp(array[0], "exit") == 0)
+			exit(EXIT_SUCCESS);
 		pid = fork();
 		if (pid == 0)
 		{
 			if (execve(array[0], array, environ) == -1)
 				perror("execve error");
+
 		}
 		else
 		{
