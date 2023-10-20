@@ -1,17 +1,19 @@
 #include "main.h"
 
 /**
- * main - simple_shell.
- * @ac: arguments count.
- * @argv: arguments vector.
- *
- * Return: Nothing.
- */
+* main - simple_shell.
+* @ac: arguments count.
+* @argv: arguments vector.
+*
+* Return: Nothing.
+*/
 
 int main(int ac, char **argv)
 {
 	int status = 0;
+
 	char **cmd = NULL, *line = NULL;
+
 	(void) ac;
 
 	while (1)
@@ -26,6 +28,11 @@ int main(int ac, char **argv)
 		cmd = my_strtok(line);
 		if (!cmd)
 			continue;
+		if (_strcmp(cmd[0], "exit") == 0)
+		{
+			free2d(cmd);
+			return (status);
+		}
 		status = my_exec(cmd, argv);
 	}
 }
