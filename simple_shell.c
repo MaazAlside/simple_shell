@@ -10,7 +10,7 @@
 
 int main(int ac, char **argv)
 {
-	int status = 0;
+	int status = 0, j;
 
 	char **cmd = NULL, *line = NULL;
 
@@ -37,6 +37,16 @@ int main(int ac, char **argv)
 				{
 					exit(2);
 				}
+			}
+			free2d(cmd);
+			return (status);
+		}
+		else if (_strcmp(cmd[0], "env") == 0)
+		{
+			for (j = 0; environ[j]; j++)
+			{
+				write(1, environ[j], _strlen(environ[j]));
+				write(1, "\n", 1);
 			}
 			free2d(cmd);
 			return (status);
