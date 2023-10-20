@@ -11,9 +11,7 @@
 int main(int ac, char **argv)
 {
 	int status = 0, j;
-
 	char **cmd = NULL, *line = NULL;
-
 	(void) ac;
 
 	while (1)
@@ -34,9 +32,7 @@ int main(int ac, char **argv)
 			{
 				status = _atoi(cmd[1]);
 				if (status == -1)
-				{
 					exit(2);
-				}
 			}
 			free2d(cmd);
 			return (status);
