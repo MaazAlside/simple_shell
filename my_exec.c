@@ -19,6 +19,7 @@ int my_exec(char **cmd, char **argv)
 		{
 			perror(argv[0]);
 			free2d(cmd);
+			exit(0);
 		}
 	}
 	else
