@@ -35,7 +35,7 @@ int main(int ac, char **argv)
 				status = _atoi(cmd[1]);
 				if (status == -1)
 				{
-					fprintf(stderr, "Invalid status: %s\n", cmd[1]);
+					exit(2);
 				}
 			}
 			free2d(cmd);
