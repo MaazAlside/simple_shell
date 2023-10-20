@@ -30,6 +30,14 @@ int main(int ac, char **argv)
 			continue;
 		if (_strcmp(cmd[0], "exit") == 0)
 		{
+			if (cmd[1] != NULL)
+			{
+				status = _atoi(cmd[1]);
+				if (status == -1)
+				{
+					fprintf(stderr, "Invalid status: %s\n", cmd[1]);
+				}
+			}
 			free2d(cmd);
 			return (status);
 		}
