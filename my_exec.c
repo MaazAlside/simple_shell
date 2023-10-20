@@ -23,7 +23,7 @@ int my_exec(char **cmd, char **argv)
 	}
 	else
 	{
-		wait(&status);
+		waitpid(child, &status, 0);
 		free2d(cmd);
 	}
 	return (WEXITSTATUS(status));
