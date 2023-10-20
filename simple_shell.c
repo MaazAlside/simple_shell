@@ -24,7 +24,7 @@ int main(int ac, char **argv)
 			return (status);
 		}
 		cmd = my_strtok(line);
-		if (cmd == NULL)
+		if (!cmd)
 			continue;
 		status = my_exec(cmd, argv);
 	}
