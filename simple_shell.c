@@ -32,7 +32,7 @@ int main(int ac, char **argv)
 			{
 				status = _atoi(cmd[1]);
 				if (status == -1)
-					exit(2);
+					exit(status);
 			}
 			free2d(cmd);
 			return (status);
