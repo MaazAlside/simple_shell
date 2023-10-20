@@ -14,7 +14,7 @@ int main(int ac, char **argv)
 	char **cmd = NULL, *line = NULL;
 	(void) ac;
 
-	for (;;)
+	while (1)
 	{
 		line = my_getline();
 		if (line == NULL)
