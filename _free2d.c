@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * free2d - frees 2d array
- * @array : input array to be freed.
+ *free2d - frees 2d array
+ *@array : input array to be freed.
  *
  * Return: nothing
  */
